@@ -1,0 +1,24 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{- partial "return-helpers/title" (dict "curPage" . "concatSiteTitle" true ) -}}</title>
+    {{ hugo.Generator }}
+    {{- if ne (.Param "useBaseUrl") false }}{{- if $.Site.BaseURL }}
+    <base href="{{ $.Site.BaseURL }}" />{{ end -}}{{ end -}}
+    {{- $metaDescription := .Description | default .Params.description | default .Params.summary | default .Summary -}}
+    {{- with $metaDescription }}
+    <meta name="description" content="{{ . }}" />
+    {{- end -}}
+    {{- $demoCSS := (resources.Match "css/hugo-dfd-demo-site/*.css") | resources.Concat "assets/css/hugo-dfd-demo-site.css" -}}
+    {{- with $demoCSS }}
+        {{- if hugo.IsProduction }}
+        <style>
+            {{ (. | minify).Content | safeCSS }}
+        </style>
+        {{- else }}
+        <style>
+            {{ .Content | safeCSS }}
+        </style>
+        {{- end }}
+    {{- end }}
+</head>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+{{ partial "head.html" . -}}
+<body>
+<div class="demo-warningold bar-demo-site heading-general-demo-site">
+    Your browser lacks features required by this site (such browsers include Internet Explorer 11).
+</div>
+{{- partial "header" . }}
+<div class="demo-scrollable">
+    {{- partial "page-title" . }}
+    <div class="main-demo-site" id="content">
+{{- block "main" . }}{{- end }}
+{{- partial "page-navigation" . }}
+    </div>
+{{ partial "footer" . -}}
+</div>
+</body>
+</html>

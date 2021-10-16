@@ -1,0 +1,25 @@
+<nav aria-label="Site Page Navigation" class="nav-site-page-demo-site bar-demo-site">
+    <ul class="list-demo-site bar-demo-site linkbar-demo-site">
+        <li class="list-item-demo-site{{- if not .Prev }} none-demo-site{{- end -}}">{{ if .Prev }}<a class="link-demo-site"
+        href="{{ .Prev.RelPermalink }}"><span class="list-item-label-demo-site">Older: </span>{{
+        partial "return-helpers/title" .Prev }}</a>{{ else
+        }}<span class="link-demo-site"><span class="list-item-label-demo-site">Older: </span>&squarf;</span>{{ end }}</li>
+        <li class="list-item-demo-site{{- if not .PrevInSection }} none-demo-site{{- end -}}">{{ if .PrevInSection
+            }}<a class="link-demo-site" href="{{ .PrevInSection.RelPermalink }}"><span
+            class="list-item-label-demo-site">Older (this section): </span>{{
+            partial "return-helpers/title" .PrevInSection }}</a>{{ else
+            }}<span class="link-demo-site" ><span class="list-item-label-demo-site">Older (this section): </span>&squarf;</span>{{ end }}</li>
+        <li class="list-item-demo-site{{- if not .Parent }} none-demo-site{{- end -}}">{{ if .Parent }}<a class="link-demo-site"
+            href="{{ .Parent.RelPermalink }}"><span class="list-item-label-demo-site">Up a level</span>{{ partial
+            "return-helpers/title" .Parent}}</a>{{
+            else }}<span class="link-demo-site"><span class="list-item-label-demo-site">At Top</span>&equiv;</span>{{ end }}</li>
+        <li class="list-item-demo-site{{- if not .NextInSection }} none-demo-site{{- end -}}">{{ if .NextInSection
+        }}<a class="link-demo-site" href="{{ .NextInSection.RelPermalink }}"><span
+            class="list-item-label-demo-site">Newer (this section): </span>{{ partial "return-helpers/title" .NextInSection }}</a>
+            {{ else }}<span class="link-demo-site"><span class="list-item-label-demo-site">Newer (this section): </span>&squarf;</span>{{ end }}</li>
+        <li class="list-item-demo-site{{- if not .Next }} none-demo-site{{- end -}}">{{ if .Next }}<a
+            class="link-demo-site" href="{{ .Next.RelPermalink }}"><span
+        class="list-item-label-demo-site">Newer: </span>{{ partial "return-helpers/title" .Next }}</a>{{ else
+        }}<span class="link-demo-site"><span class="list-item-label-demo-site">Newer: </span>&squarf;</span>{{ end }}</li>
+    </ul>
+</nav>

@@ -1,0 +1,15 @@
+<ul class="section-list-demo-site">
+{{ with .Content }}
+    {{ partial "helpers/basic-content" . }}
+{{ end }}
+{{ if .Data.Terms }}
+    {{/* For taxonomy and term pages, show the count beside the taxonomy or term, avoids need for specific taxonomy/term layouts  */}}
+    {{ range .Data.Terms }}
+    <li class="list-item-demo-site"><a class="link-demo-site" href="{{ .Page.RelPermalink }}">{{ partial "return-helpers/title" .Page }}</a> ({{- .Count -}})</li>
+    {{ end }}
+{{ else }}
+    {{ range .Pages }}
+        <li class="list-item-demo-site"><a class="link-demo-site" href="{{ .RelPermalink }}">{{ partial "return-helpers/title" . }}</a></li>
+    {{ end }}
+{{ end }}
+</ul>

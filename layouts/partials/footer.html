@@ -1,0 +1,21 @@
+<footer class="footer-demo-site bar-demo-site">
+    <nav aria-label="Site Page Navigation" class="nav-taxonomies-demo-site bar-demo-site">
+        <ul class="list-demo-site bar-demo-site linkbar-demo-site">
+        {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+            {{- $count := len $taxonomy -}}
+            {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+                <li class="list-item-demo-site"><a
+                    class="link-demo-site" href="{{- .Permalink -}}">{{
+                    $taxonomy_term }}<span class="count-demo-site"> ({{- $count -}})</span></a></li>
+            {{ end }}
+        {{ end }}
+        </ul>
+    </nav>
+    <div class="footer-infobar-demo-site bar-demo-site">
+        <div class="copyright-info-demo-site">Site <span>{{ .Site.Copyright }}</span></div>
+        {{- with default "[Hugo DFD Demo Site Theme](https://github.com/danielfdickinson/hugo-dfd-demo-site-theme)" site.Params.PoweredBy }}
+        <div class="poweredby-wrapper-demo-site">Powered By <span>{{ . | markdownify }}</span></div>
+        {{ end }}
+    </div>
+{{/* partial "helpers/debug-tables/debug-tables-list" . */ -}}
+</footer>
