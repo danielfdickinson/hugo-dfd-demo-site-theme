@@ -23,6 +23,6 @@
         ],
         "require-sri": "off",
         "void-style": "off",
-        "no-trailing-whitspace": "off"
+        "no-trailing-whitespace": "off"
     }
 }
