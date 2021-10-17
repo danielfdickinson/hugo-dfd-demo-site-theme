@@ -8,6 +8,7 @@ defaultContentLanguage = "en"
 
 [params]
   mainSections = ["post","docs"]
+  useBaseURL = false
 
 [languages]
   [languages.en]
