@@ -22,6 +22,7 @@
                 }
         ],
         "require-sri": "off",
-        "void-style": "off"
+        "void-style": "off",
+        "no-trailing-whitspace": "off"
     }
 }
