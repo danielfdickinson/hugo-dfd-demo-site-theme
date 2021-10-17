@@ -6,15 +6,21 @@ A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson]
 
 TBD
 
+## Demo Site
+
+TBD
 ## Features
 
-* Hugo module
 * exampleSite (for demo deploys and/or documentation)
 * Netlify-ready
   * Cache resources folder (exampleSite)
   * HTML Validation
   * Check internal links
   * HTML Minification
+* Minimal while looking good
+* Fast & light
+* Responsive
+* Hugo module
 
 ## Using the Theme
 1. Create a hugo site
