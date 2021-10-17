@@ -11,9 +11,6 @@
     {{- else -}}
         {{ $tryResource := true -}}
     {{- end -}}
-{{- else -}}
-    {{- $tryResource := true -}}
-    {{- $path = .Page.RelPermalink -}}
 {{- end -}}
 {{- if $tryResource -}}
     {{- $destResource := resources.Get $path -}}
