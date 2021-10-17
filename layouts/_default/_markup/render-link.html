@@ -1,4 +1,3 @@
-{{- $raw := or (hasPrefix .Text "<img") (hasPrefix .Text "<figure") -}}
 {{- $external := or (hasPrefix .Destination "http") (hasPrefix .Destination "mailto") -}}
 {{- $destination := .Destination -}}
 {{- $tryResource := false -}}
@@ -17,9 +16,9 @@
     {{- if not $destResource -}}
         {{- $destResource = .Page.Resources.GetMatch (printf "*%s*" $path) -}}
     {{- end -}}
-    {{- if and $destResource (not $raw) -}}
+    {{- if $destResource -}}
         {{- $destination = $destResource.RelPermalink -}}
     {{- end -}}
 {{- end -}}
-<a class="link-markdown-demo-site{{ if $raw }} demo-rawlink{{ end }}" href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix $destination "http" }} {{ if not .Text }}rel="nofollow noreferrer noopener"{{ else }}rel="noopener"{{ end }}{{ end }}>{{ if .Text }}{{ .Text | safeHTML }}{{ else }}{{ $destination | safeHTML }}{{ end }}</a>
+<a class="link-markdown-demo-site" href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix $destination "http" }} {{ if not .Text }}rel="nofollow noreferrer noopener"{{ else }}rel="noopener"{{ end }}{{ end }}>{{ if .Text }}{{ .Text | safeHTML }}{{ else }}{{ $destination | safeHTML }}{{ end }}</a>
 {{- /* Drop trailing newlines */ -}}
