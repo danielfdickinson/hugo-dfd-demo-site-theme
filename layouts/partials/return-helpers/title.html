@@ -8,8 +8,8 @@
         {{- end -}}
     {{- end -}}
 {{- end -}}
-{{- $foundTitle := "Untitled" -}}
-{{- $siteTitle := "Untitled Site" -}}
+{{- $foundTitle := i18n "untitled" -}}
+{{- $siteTitle := i18n "untitled_site" -}}
 {{- with $ctx -}}
     {{- if .Site.Title }}
         {{- $siteTitle = .Site.Title -}}

@@ -1,19 +1,19 @@
 baseURL = "https://example.com/"
-title = "DFD Demo Site Theme"
 copyright = "© 2021 Daniel F. Dickinson"
 description = "Theme for Daniel F. Dickinson's demo sites"
 homepage = "https://hugo-dfd-site-theme.wildtechgarden.ca/"
 enableGitInfo = true
 enableRobotsTXT = true
+defaultContentLanguage = "en"
 
 [params]
   mainSections = ["post","docs"]
-  # useBaseURL = false
 
 [languages]
   [languages.en]
     languageName = ":en:"
     languageAltTitle = "English"
+    title = "DFD Demo Site Theme"
     weight = 1
     
     [languages.en.menu]
