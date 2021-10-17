@@ -3,12 +3,25 @@
 {{- $tryResource := false -}}
 {{- $path := (index (split $destination "#") 0) -}}
 {{- if $path -}}
-    {{- if not $external -}}
-        {{- if not (fileExists (.Page.File.Dir | path.Join $path)) -}}
-            {{ $tryResource := true -}}
+    {{- if not $external -}}{{- /* only try to find resources for internal links */ -}}
+        {{- $filePath := (path.Join "content" (.Page.File.Path) $path) -}}
+        {{- if hasPrefix $path "/" -}}
+            {{- $filePath = (path.Join "content" $path) -}}
         {{- end -}}
-    {{- else -}}
-        {{ $tryResource := true -}}
+        {{- if not (fileExists $filePath) -}}
+            {{- $tryResource := true -}}
+        {{- else -}}
+            {{- /* In a URL only a single unescaped '#' is valid, so this should work */ -}}
+            {{- $fragment := (index (split $destination "#") 1) -}}
+            {{- if eq (path.Ext $path) ".md" -}}{{- /* For markdown content pages  */ -}}
+                {{- $destination = (strings.TrimSuffix ".md" $path) | relLangURL -}}
+            {{- else -}}{{- /* for anything other than a Markdown content page (e.g. images) */ -}}
+                {{- $destination = $path | relLangURL -}}
+            {{- end -}}
+            {{- if $fragment -}}
+                {{- $destination = printf "%s#%s" $destination $fragment -}}
+            {{- end -}}
+        {{- end -}}
     {{- end -}}
 {{- end -}}
 {{- if $tryResource -}}
