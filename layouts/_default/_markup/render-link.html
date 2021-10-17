@@ -11,11 +11,14 @@
     {{- else -}}
         {{ $tryResource := true -}}
     {{- end -}}
+{{- else -}}
+    {{- $tryResource := true -}}
+    {{- $path = .Page.RelPermalink -}}
 {{- end -}}
 {{- if $tryResource -}}
-    {{- $destResource := resources.Get $destination -}}
+    {{- $destResource := resources.Get $path -}}
     {{- if not $destResource -}}
-        {{- $destResource = .Page.Resources.GetMatch (printf "*%s*" $destination) -}}
+        {{- $destResource = .Page.Resources.GetMatch (printf "*%s*" $path) -}}
     {{- end -}}
     {{- if and $destResource (not $raw) -}}
         {{- $destination = $destResource.RelPermalink -}}
