@@ -1,0 +1,4 @@
+/* Just making sure custom CSS files should work */
+.no-such-class-should-exist {
+    display: none;
+}

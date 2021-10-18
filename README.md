@@ -21,6 +21,10 @@ A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson]
 * Fast & light
 * Responsive
 * Hugo module
+* TODO: On mobile replace menu bar 'buttons' with a hamburger menu (CSS only; no JS)
+* TODO: SEO improvements (like setting canonical URL)
+* TODO: microformats (OpenGraph/Twitter Cards/schema/etc)
+* TODO: Add dark theme and auto dark/light based on browser preference
 
 ## Using the Theme
 1. Create a hugo site

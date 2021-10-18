@@ -1,31 +1,38 @@
 {{- $curPage := . -}}
-{{- if ne (.Param "showTopBarMenu") false }}
+{{- if ne (.Param "hidePageHeader") true }}
 <header class="header-demo-site">
-    <nav aria-label="Main Site Menu"
+    {{- if ne (.Param "hideTopBarMenu") true }}
+    {{- /* TODO: On mobile replace menu bar 'buttons' with a hamburger menu (CSS only; no JS) */}}
+    <nav aria-label="{{ i18n "main_site_menu" }}"
     class="bar-demo-site menubar-demo-site demo-mainmenu">
-        <ul class="list-demo-site"><li class="list-item-demo-site{{- if eq $curPage site.Home }} current-menu-is-demo-site{{- end -}}">
+        {{- /* First button is 'home' (site title) link */}}
+        <ul class="list-demo-site">
+            <li class="list-item-demo-site{{- if eq $curPage site.Home }} current-menu-is-demo-site{{- end -}}">
                 <span class="link-wrapper-demo-site"><a
                 class="link-demo-site" href="{{- site.Home.RelPermalink -}}">{{-
                 partial "return-helpers/title" site.Home -}}</a></span>
             </li>
-        {{- range site.Menus.main -}}
+        {{- /* Next buttons are from the main menu (if it is defined) */}}
+        {{- range site.Menus.main }}
             <li class="list-item-demo-site{{- if eq $curPage.RelPermalink .URL }} current-menu-is-demo-site{{- end -}}">
                 <span class="link-wrapper-demo-site"><a
                 href="{{- .URL -}}" class="link-demo-site">{{-
                 .Name -}}</a></span>
             </li>
         {{- end -}}
+        {{- /* Final buttons are the 'mainSections' sections (introduced in Hugo 0.71) */}}
         {{- range site.Params.mainSections -}}
             {{- $page := site.GetPage (printf "/%s" .) -}}
-            {{- with $page -}}
-                <li class="list-item-demo-site{{- if eq $curPage . }} current-menu-is-demo-site{{- end -}}">
-                    <span class="link-wrapper-demo-site"><a
-                    href="{{- .RelPermalink -}}" class="link-demo-site">{{-
-                    partial "return-helpers/title" . -}}</a></span>
-                </li>
+            {{- with $page }}
+            <li class="list-item-demo-site{{- if eq $curPage . }} current-menu-is-demo-site{{- end -}}">
+                <span class="link-wrapper-demo-site"><a
+                href="{{- .RelPermalink -}}" class="link-demo-site">{{-
+                partial "return-helpers/title" . -}}</a></span>
+            </li>
             {{- end -}}
-        {{- end -}}
+        {{- end }}
         </ul>
     </nav>
-{{- end }}
+    {{- end }}
 </header>
+{{- end -}}

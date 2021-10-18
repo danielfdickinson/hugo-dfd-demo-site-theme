@@ -3,10 +3,10 @@
 {{ partial "head.html" . -}}
 <body>
 <div class="demo-warningold bar-demo-site heading-general-demo-site">
-    {{ i18n "browser_too_old" }}
+    {{ i18n "browser_too_old" }}{{/* Hidden unless browser does not have required CSS support */}}
 </div>
-{{- partial "header" . }}
-<div class="demo-scrollable">
+{{- partial "header" . }}{{/* Header remains on screen at all times */}}
+<div class="demo-scrollable">{{/* Everything else is in one main scrollable box (including footer) */}}
     {{- partial "page-title" . }}
     <div class="main-demo-site" id="content">
 {{- block "main" . }}{{- end }}
