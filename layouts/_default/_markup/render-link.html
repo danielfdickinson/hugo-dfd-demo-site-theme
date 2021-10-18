@@ -26,17 +26,18 @@
             {{- $filePath = (path.Join "content" $path) -}}
         {{- end -}}
         {{- $isFile := false -}}
+        {{- $tryResource := false -}}
         {{- if not (fileExists $filePath) -}}
             {{- if fileExists (printf "%s.md" $filePath) -}}{{- /* Check if it is a Markdown content page */ -}}
-                {{- $isFile := true -}}
+                {{- $isFile = true -}}
             {{- end -}}
         {{- else -}}{{- /* Usually a link to an image or other non-page asset */ -}}
-            {{- $isFile := true -}}
+            {{- $isFile = true -}}
         {{- end -}}
         {{- if not $isFile -}}
-            {{- $tryResource := true -}}
+            {{- $tryResource = true -}}
         {{- else -}}{{- /* If the file exists */ -}}
-            {{- if eq (path.Ext $path) ".md" -}}{{- /* For markdown content pages  */ -}}
+            {{- if eq (path.Ext $path) ".md" -}}{{- /* For markdown content pages */ -}}
                 {{- $destination = (strings.TrimSuffix ".md" $path) | relLangURL -}}
             {{- else -}}{{- /* for anything other than a Markdown content page (e.g. images) */ -}}
                 {{- $destination = $path | relLangURL -}}
