@@ -30,3 +30,8 @@ tags:
 [A test of pointing to an absolute directory](/post)
 ```
 [A test of pointing to an absolute directory](/post)
+
+```markdown
+[Test of a bare (this page) fragment](#test-of-render-link-render-hook)
+```
+[Test of a bare (this page) fragment](#test-of-render-link-render-hook)
