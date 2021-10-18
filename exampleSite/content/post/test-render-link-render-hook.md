@@ -11,6 +11,8 @@ tags:
 
 ## Test of Render Link Render Hook
 
+<!--more-->
+
 ```markdown
 [Go to Accessibility Goals](../../accessibility#goals)
 ```

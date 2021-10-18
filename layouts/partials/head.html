@@ -4,7 +4,7 @@
     <title>{{- partial "return-helpers/title" (dict "curPage" . "concatSiteTitle" true ) -}}</title>
     {{ hugo.Generator }}
     {{- /* We don't want to use base href if using footnotes or TableOfContents because they break with base href */ -}}
-    {{- if ne (.Param "useBaseUrl") false }}{{- if $.Site.BaseURL }}
+    {{- if eq (.Param "useBaseUrl") true }}{{- if $.Site.BaseURL }}
     <base href="{{ $.Site.BaseURL }}" />{{ end -}}{{ end -}}
     {{- $metaDescription := .Description | default .Params.description | default .Params.summary | default .Summary -}}
     {{- with $metaDescription }}
