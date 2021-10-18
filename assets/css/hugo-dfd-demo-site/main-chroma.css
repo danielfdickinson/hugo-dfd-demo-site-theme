@@ -1,0 +1,82 @@
+/* Background */ .main-demo-site .highlight .chroma { color: #f8f8f2; background-color: #272822 }
+/* Other */ .main-demo-site .highlight .chroma .x {  }
+/* Error */ .main-demo-site .highlight .chroma .err { color: #960050; background-color: #1e0010 }
+/* LineTableTD */ .main-demo-site .highlight .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .main-demo-site .highlight .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+/* LineHighlight */ .main-demo-site .highlight .chroma .hl { display: block; width: 100%;background-color: #ffffcc }
+/* LineNumbersTable */ .main-demo-site .highlight .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* LineNumbers */ .main-demo-site .highlight .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* Keyword */ .main-demo-site .highlight .chroma .k { color: #66d9ef }
+/* KeywordConstant */ .main-demo-site .highlight .chroma .kc { color: #66d9ef }
+/* KeywordDeclaration */ .main-demo-site .highlight .chroma .kd { color: #66d9ef }
+/* KeywordNamespace */ .main-demo-site .highlight .chroma .kn { color: #f92672 }
+/* KeywordPseudo */ .main-demo-site .highlight .chroma .kp { color: #66d9ef }
+/* KeywordReserved */ .main-demo-site .highlight .chroma .kr { color: #66d9ef }
+/* KeywordType */ .main-demo-site .highlight .chroma .kt { color: #66d9ef }
+/* Name */ .main-demo-site .highlight .chroma .n {  }
+/* NameAttribute */ .main-demo-site .highlight .chroma .na { color: #a6e22e }
+/* NameBuiltin */ .main-demo-site .highlight .chroma .nb {  }
+/* NameBuiltinPseudo */ .main-demo-site .highlight .chroma .bp {  }
+/* NameClass */ .main-demo-site .highlight .chroma .nc { color: #a6e22e }
+/* NameConstant */ .main-demo-site .highlight .chroma .no { color: #66d9ef }
+/* NameDecorator */ .main-demo-site .highlight .chroma .nd { color: #a6e22e }
+/* NameEntity */ .main-demo-site .highlight .chroma .ni {  }
+/* NameException */ .main-demo-site .highlight .chroma .ne { color: #a6e22e }
+/* NameFunction */ .main-demo-site .highlight .chroma .nf { color: #a6e22e }
+/* NameFunctionMagic */ .main-demo-site .highlight .chroma .fm {  }
+/* NameLabel */ .main-demo-site .highlight .chroma .nl {  }
+/* NameNamespace */ .main-demo-site .highlight .chroma .nn {  }
+/* NameOther */ .main-demo-site .highlight .chroma .nx { color: #a6e22e }
+/* NameProperty */ .main-demo-site .highlight .chroma .py {  }
+/* NameTag */ .main-demo-site .highlight .chroma .nt { color: #f92672 }
+/* NameVariable */ .main-demo-site .highlight .chroma .nv {  }
+/* NameVariableClass */ .main-demo-site .highlight .chroma .vc {  }
+/* NameVariableGlobal */ .main-demo-site .highlight .chroma .vg {  }
+/* NameVariableInstance */ .main-demo-site .highlight .chroma .vi {  }
+/* NameVariableMagic */ .main-demo-site .highlight .chroma .vm {  }
+/* Literal */ .main-demo-site .highlight .chroma .l { color: #ae81ff }
+/* LiteralDate */ .main-demo-site .highlight .chroma .ld { color: #e6db74 }
+/* LiteralString */ .main-demo-site .highlight .chroma .s { color: #e6db74 }
+/* LiteralStringAffix */ .main-demo-site .highlight .chroma .sa { color: #e6db74 }
+/* LiteralStringBacktick */ .main-demo-site .highlight .chroma .sb { color: #e6db74 }
+/* LiteralStringChar */ .main-demo-site .highlight .chroma .sc { color: #e6db74 }
+/* LiteralStringDelimiter */ .main-demo-site .highlight .chroma .dl { color: #e6db74 }
+/* LiteralStringDoc */ .main-demo-site .highlight .chroma .sd { color: #e6db74 }
+/* LiteralStringDouble */ .main-demo-site .highlight .chroma .s2 { color: #e6db74 }
+/* LiteralStringEscape */ .main-demo-site .highlight .chroma .se { color: #ae81ff }
+/* LiteralStringHeredoc */ .main-demo-site .highlight .chroma .sh { color: #e6db74 }
+/* LiteralStringInterpol */ .main-demo-site .highlight .chroma .si { color: #e6db74 }
+/* LiteralStringOther */ .main-demo-site .highlight .chroma .sx { color: #e6db74 }
+/* LiteralStringRegex */ .main-demo-site .highlight .chroma .sr { color: #e6db74 }
+/* LiteralStringSingle */ .main-demo-site .highlight .chroma .s1 { color: #e6db74 }
+/* LiteralStringSymbol */ .main-demo-site .highlight .chroma .ss { color: #e6db74 }
+/* LiteralNumber */ .main-demo-site .highlight .chroma .m { color: #ae81ff }
+/* LiteralNumberBin */ .main-demo-site .highlight .chroma .mb { color: #ae81ff }
+/* LiteralNumberFloat */ .main-demo-site .highlight .chroma .mf { color: #ae81ff }
+/* LiteralNumberHex */ .main-demo-site .highlight .chroma .mh { color: #ae81ff }
+/* LiteralNumberInteger */ .main-demo-site .highlight .chroma .mi { color: #ae81ff }
+/* LiteralNumberIntegerLong */ .main-demo-site .highlight .chroma .il { color: #ae81ff }
+/* LiteralNumberOct */ .main-demo-site .highlight .chroma .mo { color: #ae81ff }
+/* Operator */ .main-demo-site .highlight .chroma .o { color: #f92672 }
+/* OperatorWord */ .main-demo-site .highlight .chroma .ow { color: #f92672 }
+/* Punctuation */ .main-demo-site .highlight .chroma .p {  }
+/* Comment */ .main-demo-site .highlight .chroma .c { color: #75715e }
+/* CommentHashbang */ .main-demo-site .highlight .chroma .ch { color: #75715e }
+/* CommentMultiline */ .main-demo-site .highlight .chroma .cm { color: #75715e }
+/* CommentSingle */ .main-demo-site .highlight .chroma .c1 { color: #75715e }
+/* CommentSpecial */ .main-demo-site .highlight .chroma .cs { color: #75715e }
+/* CommentPreproc */ .main-demo-site .highlight .chroma .cp { color: #75715e }
+/* CommentPreprocFile */ .main-demo-site .highlight .chroma .cpf { color: #75715e }
+/* Generic */ .main-demo-site .highlight .chroma .g {  }
+/* GenericDeleted */ .main-demo-site .highlight .chroma .gd { color: #f92672 }
+/* GenericEmph */ .main-demo-site .highlight .chroma .ge { font-style: italic }
+/* GenericError */ .main-demo-site .highlight .chroma .gr {  }
+/* GenericHeading */ .main-demo-site .highlight .chroma .gh {  }
+/* GenericInserted */ .main-demo-site .highlight .chroma .gi { color: #a6e22e }
+/* GenericOutput */ .main-demo-site .highlight .chroma .go {  }
+/* GenericPrompt */ .main-demo-site .highlight .chroma .gp {  }
+/* GenericStrong */ .main-demo-site .highlight .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .main-demo-site .highlight .chroma .gu { color: #75715e }
+/* GenericTraceback */ .main-demo-site .highlight .chroma .gt {  }
+/* GenericUnderline */ .main-demo-site .highlight .chroma .gl {  }
+/* TextWhitespace */ .main-demo-site .highlight .chroma .w {  }

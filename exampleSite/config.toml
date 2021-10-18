@@ -50,6 +50,11 @@ defaultContentLanguage = "en"
   date = ["date","publishDate","lastmod",":git",":fileModTime"]
   publishDate = ["publishDate","date","lastmod",":git",":fileModTime"]
 
+[markup]
+  [markup.highlight]
+    guessSyntax = true
+    noClasses = false
+
 [privacy]
 
   [privacy.vimeo]
