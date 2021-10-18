@@ -1,18 +1,41 @@
-{{- $external := or (hasPrefix .Destination "http") (hasPrefix .Destination "mailto") -}}
+{{- /* For internal links we:
+         1. Check of the link points to a file
+            a. If it does, we find the relLangURL (that is the URL of the page relative
+            the to site root (/ or baseURL))
+            b. If it does not, we check for any assets (site-wide .Resources) or 
+               page resources that match the link (e.g. from a page bundle)
+               i. If there are we use the assets relative permalink (again relative to
+               site root (/ or baseURL))
+         2. If nothing matched, we just use the link as it was given to us
+    */
+-}}
+{{- /* For external (http://, https://, or mailto:) links we just use the link as is */ -}}
+{{- $external := or (hasPrefix .Destination "http") (hasPrefix .Destination "mailto:") -}}
 {{- $destination := .Destination -}}
 {{- $tryResource := false -}}
+{{- /* We need to know the internal URL without any fragments (e.g. #an-anchor) */ -}}
 {{- $path := (index (split $destination "#") 0) -}}
+{{- /* In a URL only a single unescaped '#' is valid, so this should work */ -}}
+{{- $fragment := (index (split $destination "#") 1) -}}
+{{- /* If we don't have a URL (but may have a fragment) */ -}}
 {{- if $path -}}
     {{- if not $external -}}{{- /* only try to find resources for internal links */ -}}
-        {{- $filePath := (path.Join "content" (.Page.File.Path) $path) -}}
-        {{- if hasPrefix $path "/" -}}
+        {{- /* fileExists operates relative to site root not relative to content directory */ -}}
+        {{- $filePath := (path.Join "content" (.Page.File.Path) $path) -}}{{- /* For links relative to the current page */ -}}
+        {{- if hasPrefix $path "/" -}}{{- /* For links relative to the output site root (e.g. /post/some-post) */ -}}
             {{- $filePath = (path.Join "content" $path) -}}
         {{- end -}}
+        {{- $isFile := false -}}
         {{- if not (fileExists $filePath) -}}
+            {{- if fileExists (printf "%s.md" $filePath) -}}{{- /* Check if it is a Markdown content page */ -}}
+                {{- $isFile := true -}}
+            {{- end -}}
+        {{- else -}}{{- /* Usually a link to an image or other non-page asset */ -}}
+            {{- $isFile := true -}}
+        {{- end -}}
+        {{- if not $isFile -}}
             {{- $tryResource := true -}}
-        {{- else -}}
-            {{- /* In a URL only a single unescaped '#' is valid, so this should work */ -}}
-            {{- $fragment := (index (split $destination "#") 1) -}}
+        {{- else -}}{{- /* If the file exists */ -}}
             {{- if eq (path.Ext $path) ".md" -}}{{- /* For markdown content pages  */ -}}
                 {{- $destination = (strings.TrimSuffix ".md" $path) | relLangURL -}}
             {{- else -}}{{- /* for anything other than a Markdown content page (e.g. images) */ -}}
@@ -23,15 +46,22 @@
             {{- end -}}
         {{- end -}}
     {{- end -}}
+{{- else if $fragment -}}{{- /* For a bare fragment, we know it is for this page */ -}}
+    {{- $destination = printf "%s#%s" (.Page.RelPermalink) $fragment -}}
 {{- end -}}
-{{- if $tryResource -}}
-    {{- $destResource := resources.Get $path -}}
-    {{- if not $destResource -}}
+{{- if $tryResource -}}{{- /* We didn't find a matching file and it is an internal link */ -}}
+    {{- $destResource := resources.Get $path -}}{{- /* Look for a match in the 'assets' dir */ -}}
+    {{- if not $destResource -}}{{- /* otherwise look in current page bundle */ -}}
         {{- $destResource = .Page.Resources.GetMatch (printf "*%s*" $path) -}}
     {{- end -}}
     {{- if $destResource -}}
-        {{- $destination = $destResource.RelPermalink -}}
+        {{- $destination = $destResource.RelPermalink -}}{{- /* We found a resource, so use it's relative permalink */ -}}
     {{- end -}}
 {{- end -}}
+{{- /* For external links, do NOT use target="_blank" (see accessibility page for link to why) and ensure "noopener"
+       (default on modern browsers anyway). As a special feature for markdown such as [](https://example.com) (that is a link
+       with no text), add "nofollow noreferrer noopener" as an easy way to add 'untrusted' external links.
+       If you need text and untrusted links, you will need a shortcode to support that.
+    */ -}}
 <a class="link-markdown-demo-site" href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix $destination "http" }} {{ if not .Text }}rel="nofollow noreferrer noopener"{{ else }}rel="noopener"{{ end }}{{ end }}>{{ if .Text }}{{ .Text | safeHTML }}{{ else }}{{ $destination | safeHTML }}{{ end }}</a>
 {{- /* Drop trailing newlines */ -}}
