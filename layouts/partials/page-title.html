@@ -1,11 +1,13 @@
-{{/* Only allowed one h1 per page */}}
+{{/* If there is no h1 in the content page add one using the site title */ -}}
 {{- if le (len (findRE "<h1.*?>(.|\n)*?</h1>" .Content)) 0 -}}
-    {{- $titleFound := partial "return-helpers/title" . -}}
+    {{- $titleFound := partial "return-helpers/title" . }}
     <h1 class="title-top-level-demo-site">{{ $titleFound }}</h1>
+{{- /* Only allowed one h1 per page */ -}}
 {{- else if gt (len (findRE "<h1.*?>(.|\n)*?</h1>" .Content)) 1 -}}
     {{ errorf "More than one H1 element in content. This is not allowed by HTML spec." }}
 {{- else -}}
-    {{- range (findRE "<h1.*?>(.|\n)*?</h1>" .Content 1) -}}
+    {{- /* If content has an h1, use it as the page title */ -}}
+    {{- range (findRE "<h1.*?>(.|\n)*?</h1>" .Content 1) }}
         {{ replaceRE "<h1(.*?)( class=\"(.*?)\")?(.*?)>((.|\n)*?)</h1>" "<h1$1 class=\"$3 title-top-level-demo-site\"$4>$5</h1>" . | safeHTML }}
     {{- end -}}
-{{ end -}}
+{{- end -}}

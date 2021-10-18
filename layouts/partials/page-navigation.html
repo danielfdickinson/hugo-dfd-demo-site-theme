@@ -1,4 +1,7 @@
-<nav aria-label="Site Page Navigation" class="nav-site-page-demo-site bar-demo-site">
+{{ if ne (.Param "hideSitePageNavigation") true -}}
+{{- /* Show page navigation bar: Older | Older (this section) | Up a Level (or At Top) | Newer (this section) | Newer */ -}}
+{{- /* Navigation labels may be hidden via CSS so that only the CSS and symbols appear (to save screen real estate) */ -}}
+<nav aria-label="{{ i18n "site_page_navigation" }}" class="nav-site-page-demo-site bar-demo-site">
     <ul class="list-demo-site bar-demo-site linkbar-demo-site">
         <li class="list-item-demo-site{{- if not .Prev }} none-demo-site{{- end -}}">{{ if .Prev }}<a class="link-demo-site"
         href="{{ .Prev.RelPermalink }}"><span class="list-item-label-demo-site">{{ i18n "older" }}: </span>{{
@@ -8,7 +11,7 @@
             }}<a class="link-demo-site" href="{{ .PrevInSection.RelPermalink }}"><span
             class="list-item-label-demo-site">{{i18n "older_this_section"}}: </span>{{
             partial "return-helpers/title" .PrevInSection }}</a>{{ else
-            }}<span class="link-demo-site" ><span class="list-item-label-demo-site">{{i18n "older_this_section"}}: </span>&squarf;</span>{{ end }}</li>
+            }}<span class="link-demo-site"><span class="list-item-label-demo-site">{{i18n "older_this_section"}}: </span>&squarf;</span>{{ end }}</li>
         <li class="list-item-demo-site{{- if not .Parent }} none-demo-site{{- end -}}">{{ if .Parent }}<a class="link-demo-site"
             href="{{ .Parent.RelPermalink }}"><span class="list-item-label-demo-site">{{ i18n "up_a_level" }}</span>{{ partial
             "return-helpers/title" .Parent}}</a>{{
@@ -23,3 +26,4 @@
         }}<span class="link-demo-site"><span class="list-item-label-demo-site">{{ i18n "newer" }}: </span>&squarf;</span>{{ end }}</li>
     </ul>
 </nav>
+{{- end }}

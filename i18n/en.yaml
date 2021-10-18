@@ -31,3 +31,15 @@
 
 - id: at_top
   translation: At Top
+
+- id: site
+  translation: Site
+
+- id: taxonomies
+  translation: Taxonomies
+
+- id: main_site_menu
+  translation: Main Site Menu
+
+- id: site_page_navigation
+  translation: Site Page Navigation
