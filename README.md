@@ -169,6 +169,7 @@ Two types of classes available:
 ### From Chroma (Syntax Highlighting)
 
 | Class | Description |
+|-------|-------------|
 | .highlight | Wrapper around syntax highlighted code blocks (e.g. a \<div> around \<pre>\<code>) |
 
 See https://github.com/alecthomas/chroma for more information and https://xyproto.github.io/splash/docs/ for a style gallery
