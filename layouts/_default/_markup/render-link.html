@@ -72,5 +72,5 @@
        with no text), add "nofollow noreferrer noopener" as an easy way to add 'untrusted' external links.
        If you need text and untrusted links, you will need a shortcode to support that.
     */ -}}
-<a class="link-markdown-demo-site" href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix $destination "http" }} {{ if not .Text }}rel="nofollow noreferrer noopener"{{ else }}rel="noopener"{{ end }}{{ end }}>{{ if .Text }}{{ .Text | safeHTML }}{{ else }}{{ $destination | safeHTML }}{{ end }}</a>
+<span class="link-wrapper-demo-site"><a class="link-markdown-demo-site" href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix $destination "http" }} {{ if not .Text }}rel="nofollow noreferrer noopener"{{ else }}rel="noopener"{{ end }}{{ end }}>{{ if .Text }}{{ .Text | safeHTML }}{{ else }}{{ $destination | safeHTML }}{{ end }}</a></span>
 {{- /* Drop trailing newlines */ -}}
