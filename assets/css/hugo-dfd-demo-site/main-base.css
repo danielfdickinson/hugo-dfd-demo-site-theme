@@ -169,7 +169,7 @@ body {
 
 .main-demo-site table tr th {
     background-color: lightgray;
-    border-bottom: 4px ridge;
+    border-bottom: 2px solid;
     border-left: 4px ridge;
     border-top: 4px ridge;
     text-align: left;
@@ -322,15 +322,6 @@ body {
 
 .nav-site-page-demo-site .list-item-demo-site:nth-child(5) .link-demo-site::after {
     content: "»";
-}
-
-.archives-demo-site .details-demo-site[open] .details-demo-site {
-    padding-left: 1em;
-}
-
-.archives-demo-site .time-demo-site {
-    font-size: .9em;
-    font-style: italic;
 }
 
 .nav-taxonomies-demo-site {
