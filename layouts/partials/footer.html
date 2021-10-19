@@ -20,7 +20,7 @@
         <div class="copyright-info-demo-site">{{ i18n "site" }} <span>{{ . }}</span></div>
         {{- end }}
         {{- if not (eq (.Param "hidePoweredBy") true) }}
-        <div class="poweredby-wrapper-demo-site"><span>{{ (default (printf "%s [%s](https://github.com/danielfdickinson/hugo-dfd-demo-site-theme)" (i18n "powered_by") (i18n "dfd_demo_site_theme")) site.Params.PoweredBy) | markdownify }}</span></div>
+        <div class="poweredby-wrapper-demo-site"><span>{{ (default (printf "%s [%s](https://github.com/danielfdickinson/hugo-dfd-demo-site-theme)" (i18n "powered_by") (i18n "dfd_demo_site_theme")) site.Params.PoweredBy) | .Page.RenderString }}</span></div>
         {{- end }}
     </div>
     {{- end }}
