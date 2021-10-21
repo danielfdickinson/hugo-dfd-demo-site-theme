@@ -1,39 +1,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{- partial "return-helpers/title" (dict "curPage" . "concatSiteTitle" true ) -}}</title>
-    {{ hugo.Generator }}
-    {{- /* We don't want to use base href if using footnotes or TableOfContents because they break with base href */ -}}
     {{- if eq (.Param "useBaseUrl") true }}{{- if $.Site.BaseURL }}
     <base href="{{ $.Site.BaseURL }}" />{{ end -}}{{ end -}}
-    {{- $metaDescription := .Description | default .Params.description | default .Params.summary | default .Summary -}}
-    {{- with $metaDescription }}
-    <meta name="description" content="{{ . }}" />
-    {{- end -}}
-    {{- /* TODO: SEO improvements (like setting canonical URL)
-         * TODO: microformats (OpenGraph/Twitter Cards/schema/etc)
-         */ -}}
-
-    {{- /* For page performance and SEO we keep all styles in a single style element in head.
-           This assumes (like we are doing) small custom CSS not a large framework.
-        */ -}}
-    {{- $sourceDemoCSS := resources.Match "css/hugo-dfd-demo-site/*.css" -}}
-    {{- /* Allow for easy CSS overrides (drop CSS files in assets/css/custom/ for the site) */ -}}
-    {{- $extendedDemoCSS := resources.Match "css/custom/*.css" -}}
-    {{- if $sourceDemoCSS -}}
-        {{- $combinedDemoCSS := $sourceDemoCSS -}}
-        {{- if $extendedDemoCSS -}}
-            {{- $combinedDemoCSS = $combinedDemoCSS | append $extendedDemoCSS -}}
-        {{- end -}}
-        {{- $demoCSS :=  ($combinedDemoCSS | resources.Concat "assets/css/hugo-dfd-demo-site.css") -}}
-        {{- if hugo.IsProduction }}
-    <style>
-            {{- ($demoCSS | minify).Content | safeCSS -}}
-    </style>
-        {{- else }}
-    <style>
-            {{- $demoCSS.Content | safeCSS -}}
-    </style>
-        {{- end }}
-    {{- end }}
+    {{- partial "head/custom-top" . }}
+    <title>{{- partial "return-helpers/title" (dict "curPage" . "concatSiteTitle" true ) -}}</title>
+    {{- partial "head/metadata" . -}}
+    {{- partial "head/custom-middle" . -}}
+    {{- partial "head/microformats" . -}}
+    {{- partial "head/styles" . -}}
+    {{- partial "head/javascript" . -}}
+    {{- partial "head/custom-bottom" . }}
 </head>
