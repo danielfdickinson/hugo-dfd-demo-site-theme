@@ -1,7 +1,6 @@
 baseURL = "https://example.com/"
 copyright = "© 2021 Daniel F. Dickinson"
-description = "Theme for Daniel F. Dickinson's demo sites"
-homepage = "https://hugo-dfd-site-theme.wildtechgarden.ca/"
+homepage = "https://hugo-dfd-demo-site-theme.wildtechgarden.ca/"
 enableGitInfo = true
 enableRobotsTXT = true
 defaultContentLanguage = "en"
