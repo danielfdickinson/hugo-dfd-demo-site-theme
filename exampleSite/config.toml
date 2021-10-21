@@ -17,6 +17,7 @@ defaultContentLanguage = "en"
     languageName = ":en:"
     languageAltTitle = "English"
     title = "DFD Demo Site Theme"
+    description = "Demo Site for theme for Daniel F. Dickinson's demo sites"
     weight = 1
     
     [languages.en.menu]
