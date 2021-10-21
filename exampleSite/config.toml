@@ -74,10 +74,6 @@ defaultContentLanguage = "en"
     path = "github.com/danielfdickinson/hugo-dfd-demo-site-theme"
 
     [[module.imports.mounts]]
-      source = "content"
-      target = "content"
-
-    [[module.imports.mounts]]
       source = "static"
       target = "static"
 
