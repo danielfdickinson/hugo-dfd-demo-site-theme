@@ -1,14 +1,14 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{- if eq (.Param "useBaseUrl") true }}{{- if $.Site.BaseURL }}
-    <base href="{{ $.Site.BaseURL }}" />{{ end -}}{{ end -}}
-    {{- partial "head/custom-top" . }}
-    <title>{{- partial "return-helpers/title" (dict "curPage" . "concatSiteTitle" true ) -}}</title>
-    {{- partial "head/metadata" . -}}
-    {{- partial "head/custom-middle" . -}}
-    {{- partial "head/microformats" . -}}
-    {{- partial "head/styles" . -}}
-    {{- partial "head/javascript" . -}}
-    {{- partial "head/custom-bottom" . }}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{{- if eq (.Param "useBaseUrl") true }}{{- if $.Site.BaseURL }}
+<base href="{{ $.Site.BaseURL }}" />{{ end -}}{{ end -}}
+{{- partial "head/custom-top" . }}
+<title>{{- partial "return-helpers/title" (dict "curPage" . "concatSiteTitle" true ) -}}</title>
+{{ partial "head/metadata" . -}}
+{{- partial "head/custom-middle" . -}}
+{{- partial "head/microformats" . -}}
+{{- partial "head/styles" . -}}
+{{- partial "head/javascript" . -}}
+{{- partial "head/custom-bottom" . }}
 </head>
