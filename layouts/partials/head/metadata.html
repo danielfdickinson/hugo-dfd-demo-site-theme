@@ -1,7 +1,0 @@
-{{- hugo.Generator }}
-{{- /* We don't want to use base href if using footnotes or TableOfContents because they break with base href */ -}}
-{{- $metaDescription := .Description | default .Params.description | default .Params.summary | default .Summary -}}
-{{- with $metaDescription }}
-<meta name="description" content="{{ . }}" />
-{{- end -}}
-{{- /* TODO: SEO improvements (like setting canonical URL) */ -}}
