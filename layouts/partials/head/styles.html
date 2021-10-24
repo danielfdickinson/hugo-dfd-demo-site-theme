@@ -1,15 +1,21 @@
 {{- /* For page performance and SEO we keep all styles in a single style element in head.
-        This assumes (like we are doing) small custom CSS not a large framework.
+       This assumes (like we are doing) small custom CSS not a large framework.
     */ -}}
 {{- $sourceDemoCSS := resources.Match "css/hugo-dfd-demo-site/*.css" -}}
-{{- /* Allow for easy CSS overrides (drop CSS files in assets/css/custom/ for the site) */ -}}
-{{- $extendedDemoCSS := resources.Match "css/custom/*.css" -}}
 {{- if $sourceDemoCSS -}}
-    {{- $combinedDemoCSS := $sourceDemoCSS -}}
-    {{- if $extendedDemoCSS -}}
-        {{- $combinedDemoCSS = $combinedDemoCSS | append $extendedDemoCSS -}}
+    {{- $combinedCSS := $sourceDemoCSS -}}
+    {{- if eq (.Param "debugTablesInFooter") true -}}
+        {{- $debugTablesCSS := (partial "helpers/debug-tables/debug-head-snippet" .) -}}
+        {{- if $debugTablesCSS -}}
+            {{- $combinedCSS = $combinedCSS | append $debugTablesCSS -}}
+        {{- end -}}
     {{- end -}}
-    {{- $demoCSS :=  ($combinedDemoCSS | resources.Concat "assets/css/hugo-dfd-demo-site.css") -}}
+    {{- /* Allow for easy CSS overrides (drop CSS files in assets/css/custom/ for the site) */ -}}
+    {{- $extendedDemoCSS := resources.Match "css/custom/*.css" -}}
+    {{- if $extendedDemoCSS -}}
+        {{- $combinedCSS = $combinedCSS | append $extendedDemoCSS -}}
+    {{- end -}}
+    {{- $demoCSS := ($combinedCSS | resources.Concat "assets/css/hugo-dfd-demo-site.css") -}}
     {{- if hugo.IsProduction }}
 <style>
         {{- ($demoCSS | minify).Content | safeCSS -}}
