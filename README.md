@@ -92,6 +92,7 @@ A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson]
 
 | Param | Default | Description |
 |-------|---------|-------------|
+| debugTablesInFooter | false | Show Debug Tables in Footer |
 | hidePageFooter     | false | Hide entire page footer infobar (currently copyright and powered by) |
 | hidePageHeader     | false | Hide enter page header |
 | hidePageTaxonomies | false | Hide taxonomies bar that normally appears near bottom of page |
@@ -117,7 +118,6 @@ Two types of classes available:
 * Feature Classes
   * E.g. ``demo-warningold`` which is wrapped around the old browser warning.
   * Always begin with ``demo`` and a hyphen. The second word is a usually single word (no hyphens).
-
 
 ### Feature Classes
 

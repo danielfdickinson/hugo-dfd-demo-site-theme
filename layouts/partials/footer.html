@@ -24,5 +24,7 @@
         {{- end }}
     </div>
     {{- end }}
-{{- /* partial "helpers/debug-tables/debug-tables-list" . */}}
+    {{- if eq (.Param "debugTablesInFooter") true -}}
+        {{- partial "helpers/debug-tables/debug-tables-list" . -}}
+    {{- end -}}
 </footer>
