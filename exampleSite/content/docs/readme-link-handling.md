@@ -2,6 +2,7 @@
 title: "Hugo DFD Link Handling README"
 date: 2021-10-25T05:07:24Z
 publishDate: 2021-10-25T05:07:24Z
+author: Daniel F. Dickinson
 categories:
     - Documentation
 tags:
