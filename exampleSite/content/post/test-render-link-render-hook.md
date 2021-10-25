@@ -8,5 +8,6 @@ categories:
 tags:
     - Links
     - Testing
+description: "Various tests of markdown links (rendered by render-link render hook)."
 ---
 {{< page-assets "post-test-render-link-render-hook.md" >}}

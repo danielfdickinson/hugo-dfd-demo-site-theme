@@ -11,4 +11,4 @@ tags:
 
 A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson](https://www.danielfdickinson.ca).
 
-See the [documentation](/docs/) for more information. You probably want to start with the [README](/docs/readme)
+See the [documentation](/docs/) for more information. You probably want to start with the [README](/docs/readme).
