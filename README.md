@@ -8,7 +8,12 @@ A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson]
 
 ## Demo Site
 
-[Hugo DFD Demo Site Theme Demo Site](https://hugo-dfd-demo-site-theme.wildtechgarden.ca/)
+<https://hugo-dfd-demo-site-theme.wildtechgarden.ca/>
+
+## GitHub Repository
+
+<https://github.com/danielfdickinson/hugo-dfd-demo-site-theme>
+
 ## Features
 
 * exampleSite (for demo deploys and/or documentation)
