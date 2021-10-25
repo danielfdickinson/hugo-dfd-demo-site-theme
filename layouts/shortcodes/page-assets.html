@@ -1,4 +1,4 @@
-{{- /* Include and render as markdown content from an asset resource named (as the first positional parameter) */ -}}
+{{- /* Include as markdown content from an asset resource named (as the first positional parameter) */ -}}
 {{- $curPage := .Page -}}
 {{- $page_asset_name := .Get 0 -}}
 {{- $page_asset := resources.Get $page_asset_name -}}
@@ -6,5 +6,5 @@
     {{- /* Remove YAML, <!--more--> (summary break indicator), and 
          * (outer) Replace markdown level 1 headings in content with level 2 and render content as markdown
          */ -}}
-    {{- partial "helpers/basic-content" ((replaceRE "^# " "## " (replaceRE "(^---\n([^-]|-[^-]|--[^-]|---[^\n])+---\n|<!--more-->)" "" $page_asset.Content)) | $curPage.RenderString) -}}
+    {{- partial "helpers/basic-content" ((printf "\n%s" (replaceRE "^# " "## " (replaceRE "(^---\n([^-]|-[^-]|--[^-]|---[^\n])+---\n|<!--more-->)" "" $page_asset.Content))) | $curPage.RenderString) -}}
 {{- end -}}
