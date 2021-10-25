@@ -77,8 +77,32 @@ summaryLength = 25
     path = "github.com/danielfdickinson/hugo-dfd-link-handling"
 
     [[module.imports.mounts]]
+      source = "static"
+      target = "static"
+
+    [[module.imports.mounts]]
+      source = "layouts"
+      target = "layouts"
+
+    [[module.imports.mounts]]
+      source = "data"
+      target = "data"
+
+    [[module.imports.mounts]]
+      source = "assets"
+      target = "assets"
+
+    [[module.imports.mounts]]
       source = "README.md"
       target = "assets/README-link-handling.md"
+
+    [[module.imports.mounts]]
+      source = "i18n"
+      target = "i18n"
+
+    [[module.imports.mounts]]
+      source = "archetypes"
+      target = "archetypes"
 
   [[module.imports]]
     ignoreConfig = true
