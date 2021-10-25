@@ -1,4 +1,4 @@
-github.com/danielfdickinson/hugo-dfd-demo-site-theme v0.0.0-20211024071933-4cb90d6358a2 h1:EIzwTnv4+x83EQ0FTCFNNsqwvWmsYaNuOaJEjPgCOH0=
-github.com/danielfdickinson/hugo-dfd-demo-site-theme v0.0.0-20211024071933-4cb90d6358a2/go.mod h1:h4mAffRc9lbTWAvWo+Ymr1nIQ8OtjOETJ+ifsE/TR0k=
-github.com/danielfdickinson/hugo-dfd-microformats v0.0.0-20211022170842-5f91098f29f3 h1:oPm+t1SR5ZJqqkHdZW1XYBMx9k/HnPLwifDBOZaEG5I=
-github.com/danielfdickinson/hugo-dfd-microformats v0.0.0-20211022170842-5f91098f29f3/go.mod h1:9QrnpVwNci86RHfah59GiTsJDi1yJbeYgdEPp6SrqQA=
+github.com/danielfdickinson/hugo-dfd-link-handling v0.1.0 h1:szRvWEZQk9vRFe1CUPI3ZTeeU6K/bByY54wc/lovSp0=
+github.com/danielfdickinson/hugo-dfd-link-handling v0.1.0/go.mod h1:eGt6WxNo87zjO0Gb+/uOOuaeZEGTcyqjeFQuVHyUwJc=
+github.com/danielfdickinson/hugo-dfd-link-handling/exampleSite v0.0.0-20211025042849-39318ff3813e h1:gBbPz+Z9Uhm2jXH7HFOJplu6w5LEKvZx9SrgED0lakE=
+github.com/danielfdickinson/hugo-dfd-link-handling/exampleSite v0.0.0-20211025042849-39318ff3813e/go.mod h1:i4b0GqfbjmsmicMlSDW3yVN/M4mZgazEIudX1bxsMmw=
