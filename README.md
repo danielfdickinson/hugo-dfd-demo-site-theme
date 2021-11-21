@@ -66,7 +66,7 @@ A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson]
    cd themes
    ```
 
-2. Obtain a copy of the latest development version of the theme e.g. ([a theme Zip file from the Git repo](https://github.com/danielfdickinson/hugo-dfd-demo-site-theme/archive/refs/head/main.zip))
+2. Obtain a copy of the latest development version of the theme e.g. ([a theme Zip file from the Git repo](https://github.com/danielfdickinson/hugo-dfd-demo-site-theme/archive/refs/heads/main.zipp))
 3. Copy/extract the theme into hugo-dfd-demo-site-theme in the themes directory
 4. Change back to the site directory
 5. To test the result, run the local Hugo server
