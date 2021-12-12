@@ -1,6 +1,6 @@
 # Hugo DFD Demo Site Theme
 
-A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson](https://www.danielfdickinson.ca).
+A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson](https://www.wildtechgarden.ca/).
 
 ## Netlify Status
 
