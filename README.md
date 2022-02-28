@@ -2,13 +2,9 @@
 
 A theme for [Hugo](https://gohugo.io) module demo sites by [Daniel F. Dickinson](https://www.wildtechgarden.ca/).
 
-## Netlify Status
+## Status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bce8fe1e-8948-47e4-8622-d02ff06b1024/deploy-status)](https://app.netlify.com/sites/hugo-dfd-demo-site-theme/deploys)
-
-## Demo Site
-
-<https://hugo-dfd-demo-site-theme.wildtechgarden.ca/>
+ARCHIVED: This repo is unmaintained and may not be suitable for any purpose except historical record.
 
 ## GitHub Repository
 
